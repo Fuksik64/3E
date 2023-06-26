@@ -63,7 +63,7 @@ class Validator
         $column = ltrim($matches[1], ',');
 
         $result = (new \App\Models\Model())->getByColumn($table, $column, $_REQUEST[$param]);
-        if ($result) {
+        if (count($result)) {
             $this->errors[] = "{$param} must be unique";
         }
     }
